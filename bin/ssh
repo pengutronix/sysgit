@@ -1,0 +1,6 @@
+#! /bin/bash
+# ignore existing ssh-agents!
+unset SSH_AUTH_SOCK
+unset SSH_AGENT_PID
+
+ssh -i /etc/ssh/ssh_host_rsa_key $@
