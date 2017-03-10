@@ -1,0 +1,6 @@
+# cron entry for sysgit
+SHELL=/bin/bash
+GIT_SSH=/var/lib/sysgit/ssh
+
+# wait for some time between 0 and 2978 seconds to avoid shooting at the sysgitolite server at the same time
+0 * * * * root : pushing sysgit to sysgitolite; test -x /var/lib/sysgit/objects && cronic sys git push sysgitolite HEAD
