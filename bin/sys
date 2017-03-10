@@ -1,0 +1,44 @@
+#! /usr/bin/env bash
+################################################################################
+### just checking whether someone needs an helptext
+function startsWithDash {
+    test "${1:0:1}" = "-"
+}
+function paramsAreEmpty {
+    test ${#@} -eq 0
+}
+
+function printHelp {
+    echo "“sys” sets the environment variable (\$GIT_DIR) for git programs, to find the git dir"
+    echo ""
+    echo "  [synopsis]"
+    echo "     $ sys command"
+    echo ""
+    echo "  [examples]"
+    echo "     $ sys git add /etc/passwd"
+    echo "     $ sys git commit -m 'add /etc/passwd'"
+    echo "     $ sys tig"
+    echo ""
+    echo "  [environment variables]"
+    echo "     SYSGIT_PATH_OFFSET: set this path to another system, where you"
+    echo "                         could chroot in, so you can see and checkout"
+    echo "                         differences between the installed system and"
+    echo "                         another one"
+    echo ""
+
+}
+
+if startsWithDash $@; then
+    printHelp
+    exit 0
+fi
+
+if paramsAreEmpty $@; then
+    printHelp
+    exit 0
+fi
+################################################################################
+export GIT_DIR=$SYSGIT_PATH_OFFSET/var/lib/sysgit
+test -e /var/lib/sysgit/ssh && export GIT_SSH=/var/lib/sysgit/ssh
+
+"$@"
