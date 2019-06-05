@@ -56,4 +56,4 @@ BASH Setup
 Whats missing
 -------------
 
-* sudo support
+* ansible module
