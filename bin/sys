@@ -37,6 +37,16 @@ if paramsAreEmpty $@; then
     printHelp
     exit 0
 fi
+
+### sudo support
+# escalate with sudo to root
+uid=$(id -u)
+
+if [ "${uid}" -ne "0" ]; then
+	# This Script *must* run as user root ... so changing uid
+	echo "This wrapper calls itself as user 'root' using sudo now:"
+	exec sudo -u root "$0" "$@"
+fi
 ################################################################################
 export GIT_DIR=$SYSGIT_PATH_OFFSET/var/lib/sysgit
 test -e /var/lib/sysgit/ssh && export GIT_SSH=/var/lib/sysgit/ssh
