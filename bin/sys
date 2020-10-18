@@ -51,7 +51,7 @@ fi
 ### create/find credentials for using with git
 
 if [ -n "$SUDO_USER" ]; then
-    homedir=$(getent passwd ${SUDO_USER} | cut -d\: -f 6)
+    homedir=$(getent passwd ${SUDO_USER} | cut -d: -f 6)
     git_config_file="${homedir}"/.gitconfig
     hostname=$(hostname -f)
     # check for user credentials!
