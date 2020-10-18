@@ -57,10 +57,10 @@ if [ -n "$SUDO_USER" ]; then
     # check for user credentials!
     if [ -z "$GIT_COMMITTER_NAME" ]; then
             # if they do not exist, try to read from gitconfig in home dir
-            export GIT_COMMITTER_NAME=$(git config -f $git_config_file user.name)
-            export GIT_AUTHOR_NAME=$(git config -f $git_config_file user.name)
-            export GIT_COMMITTER_EMAIL=$(git config -f $git_config_file user.email)
-            export GIT_AUTHOR_EMAIL=$(git config -f $git_config_file user.email)
+            export GIT_COMMITTER_NAME=$(git config -f "$git_config_file" user.name)
+            export GIT_AUTHOR_NAME=$(git config -f "$git_config_file" user.name)
+            export GIT_COMMITTER_EMAIL=$(git config -f "$git_config_file" user.email)
+            export GIT_AUTHOR_EMAIL=$(git config -f "$git_config_file" user.email)
             # if this fails ... generate the credentials
     fi
     : ${GIT_COMMITTER_EMAIL:=${SUDO_USER}@${hostname}}
@@ -69,7 +69,7 @@ if [ -n "$SUDO_USER" ]; then
     : ${GIT_AUTHOR_NAME:=${SUDO_USER}}
 fi
 ################################################################################
-export GIT_DIR=$SYSGIT_PATH_OFFSET/var/lib/sysgit
+export GIT_DIR="$SYSGIT_PATH_OFFSET/var/lib/sysgit"
 test -e /var/lib/sysgit/ssh && export GIT_SSH=/var/lib/sysgit/ssh
 
 "$@"
