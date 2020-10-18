@@ -5,7 +5,7 @@ function startsWithDash {
     test "${1:0:1}" = "-"
 }
 function paramsAreEmpty {
-    test ${#@} -eq 0
+    test $# -eq 0
 }
 
 function printHelp {
