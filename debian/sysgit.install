@@ -1,0 +1,2 @@
+bin/sys usr/bin/
+bin/ssh var/lib/sysgit/

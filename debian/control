@@ -1,0 +1,13 @@
+Source: sysgit
+Section: admin
+Priority: optional
+Maintainer: Björn Lässig <b.laessig@pengutronix.de>
+Build-Depends: debhelper-compat (= 12)
+Rules-Requires-Root: no
+
+Package: sysgit
+Architecture: all
+Depends: bash
+Description: Git environment wrapper for managing and documenting system changes
+ sysgit is a wrapper around git that helps maintaining various system files
+ (e.g. below /etc) in version control.
