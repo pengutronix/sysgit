@@ -26,6 +26,9 @@ Usage
   sys tig
   sys bash
 
+  # autocommit changes on /etc/hosts 
+  systemctl enable sysgit_commit@-etc-hosts.path
+
 SSH Setup
 ---------
 

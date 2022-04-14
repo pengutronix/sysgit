@@ -1,2 +1,4 @@
 bin/sys usr/bin/
 bin/ssh var/lib/sysgit/
+systemd/sysgit_commit@.service lib/systemd/system/
+systemd/sysgit_commit@.path lib/systemd/system/

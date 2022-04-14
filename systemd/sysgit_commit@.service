@@ -1,0 +1,7 @@
+[Unit]
+Description=Commit a System Git change for %I
+
+[Service]
+Type=oneshot
+ExecStart=sys git commit --author="InodeWatch <root@%H>" --untracked-files=no --verbose -m "update monitored file" -- %I
+

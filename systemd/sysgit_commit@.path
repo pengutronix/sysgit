@@ -1,0 +1,6 @@
+[Path]
+PathChanged=%I
+TriggerLimitIntervalSec=30min
+
+[Install]
+WantedBy=paths.target
