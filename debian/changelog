@@ -1,3 +1,9 @@
+sysgit (1.1-0ptx1) UNRELEASED; urgency=medium
+
+  * add bash_completion
+
+ -- Björn Lässig <b.laessig@pengutronix.de>  Wed, 28 Aug 2024 10:01:24 +0200
+
 sysgit (1.0-0ptx1) UNRELEASED; urgency=medium
 
   * Update VCS URLs as the old ones are about to die.
