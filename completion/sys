@@ -1,0 +1,10 @@
+# bash completion for sys                              -*- shell-script -*-
+
+_sys()
+{
+    local cur prev words cword
+    _init_completion || return
+
+    _command_offset 1
+} &&
+    complete -F _sys sys
